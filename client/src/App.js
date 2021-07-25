@@ -6,7 +6,6 @@ import Chat from './components/chat/Chat';
 import Home from './components/home/Home';
 import Navbar from './components/layout/Navbar';
 
-
 function App() {
   const [user, setUser] = useState (null)
   return (
