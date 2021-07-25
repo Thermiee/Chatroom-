@@ -1,25 +1,25 @@
 import React, { useContext } from 'react';
-import {UserContext} from '../../UserContext';
+import { UserContext } from '../../UserContext';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const {user, setUser} = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
     const setAsJohn = () => {
         const john = {
-            name:'John',
+            name: 'John',
             email: 'john@email.com',
-            password:'123',
-            id:'123'
+            password: '123',
+            id: '123'
         }
         setUser(john);
     }
 
     const setAsTom = () => {
         const tom = {
-            name:'Tom',
+            name: 'Tom',
             email: 'Tom@email.com',
-            password:'456',
-            id:'456'
+            password: '456',
+            id: '456'
         }
         setUser(tom);
     }
@@ -29,9 +29,9 @@ const Home = () => {
             <button onClick={setAsJohn}>Set as John</button>
             <button onClick={setAsTom}>Set as Tom</button>
             <Link to={'/chat'}>
-            <button>Go to chat</button>
+                <button>Go to chat</button>
             </Link>
-            
+
         </div>
     )
 }
