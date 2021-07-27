@@ -7,20 +7,19 @@ import Home from './components/home/Home';
 import Navbar from './components/layout/Navbar';
 
 function App() {
-  const [user, setUser] = useState (null)
+  const [user, setUser] = useState(null)
   return (
     <Router>
-         <div className="App">
-           <UserContext.Provider value= {{user, setUser}}>
-             <Navbar/>
-             <Switch>
-               <Route exact path ="/" component={Home} />
-               <Route exact path ="/chat" component={Chat} />
-             </Switch>
-           </UserContext.Provider>
-    </div>
+      <div className="App">
+        <UserContext.Provider value={{ user, setUser }}>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/chat/:room_id/:room-name" component={Chat} />
+          </Switch>
+        </UserContext.Provider>
+      </div>
     </Router>
- 
   );
 }
 
