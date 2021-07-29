@@ -3,12 +3,12 @@ const http = require('http').createServer(app);
 const socketio = require('socket.io');
 const io = socketio(http);
 const { addUser } = require('./helper');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000
 
 io.on('connection', (socket) => {
     console.log(socket.id);
     socket.on('create-room', name => {
-        console.log('The room name recieved is ', name)
+        console.log('Then room name received is ', name)
     })
     socket.on('join', ({ name, room_id, user_id }) => {
         const { error, user } = addUser({

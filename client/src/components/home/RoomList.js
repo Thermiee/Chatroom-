@@ -10,7 +10,6 @@ const RoomList = ({ rooms }) => {
                     <Room name={room.name} />
                 </Link>
             ))}
-
         </div>
     )
 }
