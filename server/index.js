@@ -1,6 +1,6 @@
 const app = require('express')();
 const http = require('http').createServer(app);
-const socketio = require('socket.io');
+const socketio = require('socket.io')
 const io = socketio(http);
 const { addUser } = require('./helper');
 const PORT = process.env.PORT || 5000

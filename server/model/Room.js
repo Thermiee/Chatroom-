@@ -8,4 +8,5 @@ const roomSchema = new moongoose.Schema({
 });
 
 const Room = mongoose.moodel('room', roomSchema);
+
 module.exports = Room;
