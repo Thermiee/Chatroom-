@@ -2,6 +2,7 @@ const app = require('express')();
 const http = require('http').createServer(app);
 const socketio = require('socket.io')
 const io = socketio(http);
+const mongoDB = "mongodb+srv://chat:password123.@cluster0.wojgm.mongodb.net/rooms?retryWrites=true&w=majority"
 const { addUser, getUser, removeUser } = require('./helper');
 const PORT = process.env.PORT || 5000
 
