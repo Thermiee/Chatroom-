@@ -1,8 +1,10 @@
 const app = require('express')();
 const http = require('http').createServer(app);
+const mongoose = require('mongoose');
 const socketio = require('socket.io')
 const io = socketio(http);
-const mongoDB = "mongodb+srv://chat:password123.@cluster0.wojgm.mongodb.net/rooms?retryWrites=true&w=majority"
+const mongoDB = "mongodb+srv://chat:password123.@cluster0.wojgm.mongodb.net/rooms?retryWrites=true&w=majority";
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('connected')).catch(err => console.log(err));
 const { addUser, getUser, removeUser } = require('./helper');
 const PORT = process.env.PORT || 5000
 
