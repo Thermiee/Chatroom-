@@ -11,12 +11,8 @@ const Room = require('./models/Room');
 
 io.on('connection', (socket) => {
     console.log(socket.id);
-    socket.on('create-room', name => {
-       // console.log('Then room name received is ', name)
-       const room = new Room({ name });
-       room.save().then(result => {
-           io.emit('room-created', result)
-        })
+    Room.find().then(result => {
+        socket.emit('output-rooms', result)
     })
     socket.on('join', ({ name, room_id, user_id }) => {
         const { error, user } = addUser({
