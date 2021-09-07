@@ -1,4 +1,6 @@
 const app = require('express')();
+const authRoutes = require('./routes/authRoutes');
+app.use(authRoutes);
 const http = require('http').createServer(app);
 const mongoose = require('mongoose');
 const socketio = require('socket.io')
@@ -50,6 +52,7 @@ io.on('connection', (socket) => {
             io.to(room_id).emit('message', result);
             callback()
         })
+
     })
     socket.on('get-messages-history', room_id => {
         Message.find({ room_id }).then(result => {

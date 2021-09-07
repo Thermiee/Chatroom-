@@ -3,7 +3,6 @@ import { UserContext } from '../../UserContext';
 import { Link } from 'react-router-dom';
 import RoomList from './RoomList';
 import io from 'socket.io-client';
-
 let socket;
 const Home = () => {
     const { user, setUser } = useContext(UserContext);
@@ -92,10 +91,10 @@ const Home = () => {
             </div>
 
             <Link to={'/chat'}>
-                <button>Go to chat</button>
+                <button>go to chat</button>
             </Link>
         </div>
     )
 }
 
-export default Home;
+export default Home
