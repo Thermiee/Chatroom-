@@ -3,6 +3,7 @@ import { UserContext } from '../../UserContext';
 import { Redirect } from 'react-router-dom';
 const Signup = () => {
     const { user, setUser } = useContext(UserContext);
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -43,6 +44,7 @@ const Signup = () => {
     return (
 
         <div className="row">
+            <h2>Sign up</h2>
             <form className="col s12" onSubmit={submitHandler}>
                 <div className="row">
                     <div className="input-field col s12">

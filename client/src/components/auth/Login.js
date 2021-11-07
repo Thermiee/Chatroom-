@@ -1,4 +1,3 @@
-setNameError('');
 import React, { useState, useContext } from 'react'
 import { UserContext } from '../../UserContext';
 import { Redirect } from 'react-router-dom';
@@ -45,6 +44,7 @@ const Login = () => {
     return (
 
         <div className="row">
+            <h2>Login</h2>
             <form className="col s12" onSubmit={submitHandler}>
                 <div className="row">
                     <div className="input-field col s12">
