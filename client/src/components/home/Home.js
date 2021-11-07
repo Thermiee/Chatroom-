@@ -39,24 +39,6 @@ const Home = () => {
 
     }
 
-    const setAsJohn = () => {
-        const john = {
-            name: 'John',
-            email: 'John@email.com',
-            password: '123',
-            id: '123'
-        }
-        setUser(john);
-    }
-    const setAsTom = () => {
-        const tom = {
-            name: 'Tom',
-            email: 'Tom@email.com',
-            password: '456',
-            id: '456'
-        }
-        setUser(tom);
-    }
     if (!user) {
         return <Redirect to='/login' />
     }
@@ -83,8 +65,7 @@ const Home = () => {
                             </form>
                         </div>
                         <div className="card-action">
-                            <a href="#" onClick={setAsJohn}>set as John</a>
-                            <a href="#" onClick={setAsTom}>set as Tom</a>
+
                         </div>
                     </div>
                 </div>
@@ -92,6 +73,7 @@ const Home = () => {
                     <RoomList rooms={rooms} />
                 </div>
             </div>
+
         </div>
     )
 }
