@@ -10,6 +10,17 @@ const Signup = () => {
     const submitHandler = e => {
         e.preventDefault();
         console.log(name, email, password)
+        try {
+            const res = await fetch('http://localhost:5000/signup', {
+                method: 'POST',
+                body: JSON.stringify({ name, email, password }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            const data = await res.json();
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
     }
     return (
 
